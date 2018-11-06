@@ -1,6 +1,7 @@
 package com.airesyi.enjoy.controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.BufferedReader;
@@ -9,10 +10,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 @RestController
+@RequestMapping("tools")
 public class Tools {
     public static final String GOPATH = System.getenv("GOPATH");
 
-    @PostMapping("/ansSql")
+    @PostMapping("soar/ansSql")
     public String ansSql(String sql) {
         StringBuffer result = new StringBuffer();
         try {
